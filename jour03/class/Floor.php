@@ -1,9 +1,9 @@
 <?php
 
 class Floor {
-    private $id;
-    private $name;
-    private $level;
+    private int $id;
+    private string $name;
+    private int $level;
 
     public function __construct(
         int $id = 0,
@@ -18,25 +18,26 @@ class Floor {
     public function getId(): int {
         return $this->id;
     }
+    public function setId(int $id): self {
+        $this->id = $id;
+        return $this;
+    }
 
     public function getName(): string {
         return $this->name;
+    }
+    public function setName(string $name): self {
+        $this->name = $name;
+        return $this;
     }
 
     public function getLevel(): int {
         return $this->level;
     }
 
-    public function setId(int $id): void {
-        $this->id = $id;
-    }
-
-    public function setName(string $name): void {
-        $this->name = $name;
-    }
-
-    public function setLevel(int $level): void {
+    public function setLevel(int $level): self {
         $this->level = $level;
+        return $this;
     }
 }
 ?>

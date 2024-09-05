@@ -1,10 +1,10 @@
 <?php
 
 class Room{
-    private $id;
-    private $floor_id;
-    private $name;
-    private $capacity;
+    private int $id;
+    private int $floor_id;
+    private string $name;
+    private int $capacity;
 
     public function __construct(
 
@@ -22,33 +22,38 @@ class Room{
     public function getId(): int{
         return $this->id;
     }
+    public function setId(int $id): self{
+        $this->id = $id;
+        return $this;
+
+    }
 
     public function getFloorId(): int{
         return $this->floor_id;
     }
+    public function setFloorId(int $floor_id): self{
+        $this->floor_id = $floor_id;
+        return $this;
+    }
 
     public function getName(): string{
         return $this->name;
+        
     }
+    
+    public function setName(string $name): self{
+        $this-> name = $name;
+        return $this;
+    }
+
     
     public function getCapacity(): int{
         return $this->capacity;
     }
 
-    public function setId(int $id): void{
-        $this->id = $id;
-
-    }
-    public function setFloorId(int $floor_id): void{
-        $this->floor_id = $floor_id;
-    }
-
-    public function setName(string $name): void{
-        $this-> name = $name;
-    }
-
-    public function setCapacity(int $capacity): void{
+    public function setCapacity(int $capacity): self{
         $this-> capacity = $capacity;
+        return $this;
     }
 }    
 ?>
